@@ -14,6 +14,7 @@ namespace Homework1
                 case 1:
                     Console.WriteLine("You Got a new Car");
                     break;
+
                 case 2:
                     Console.WriteLine("You got a new plane");
                     break;

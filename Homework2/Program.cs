@@ -30,6 +30,7 @@ namespace Homework2
             if (num2 % 2 == 0)
             {
                 Console.WriteLine($"{num2} is even number");
+
             }
             else
             {
