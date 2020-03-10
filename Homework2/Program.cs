@@ -25,6 +25,7 @@ namespace Homework2
             else
             {
             
+
             Console.WriteLine($"{num2} is the biggest num");
 
             if (num2 % 2 == 0)
