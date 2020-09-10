@@ -13,6 +13,8 @@ namespace BookRentApp.v1.Models.Enums
         Crime,
         Romance,
         Poetry,
-        Comedy
+        Comedy,
+        NonFiction,
+        Fiction
     }
 }

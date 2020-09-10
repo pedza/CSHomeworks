@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Rent A Book</title>
+
+    @*personal css*@
+    <link href="~/css/site.css" rel="stylesheet" />
+
+    @*libriaries*@
+    <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/css/bootstrap-grid.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/css/bootstrap-reboot.css" rel="stylesheet" />
+</head>
+<body>
+    @*nav*@
+
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a asp-controller="Home" asp-action="Index" class="navbar-brand" >Rent A Book</a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+
+                <ul class="navbar-nav">
+
+                    <li class="nav-item active"> @Html.ActionLink("Home", "Index", "Home", new { }, new { @class = "nav-link" })</li>
+                    <li class="nav-item"><a asp-controller="Rent" asp-action="Library" class="nav-link"> Library </a>
+                    <li class="nav-item"><a asp-controller="Home" asp-action="About" class="nav-link"> About Us </a>
+                    <li class="nav-item"><a asp-controller="Home" asp-action="Contact" class="nav-link"> Contact Us </a>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Dropdown link
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        @*body*@
+        @RenderBody()
+
+        @*footer*@
+        <h5 class="text-center">&copy; Rent A Book </h5>
+    </div>
+
+   
+
+
+    @*libraries*@
+    <script src="~/lib/jquery/jquery.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.js"></script>
+    @*personal js*@
+    <script src="~/js/site.js"></script>
+</body>
+</html>

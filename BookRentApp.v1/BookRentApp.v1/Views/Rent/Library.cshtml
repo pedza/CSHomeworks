@@ -1,0 +1,13 @@
+﻿@model LibraryViewModel
+@{
+    ViewData["Title"] = "Library";
+}
+
+<h2>Library</h2>
+
+<div class="orderCenter">
+    @foreach (var book in Model.Books)
+    {
+        <partial name="~/Views/Shared/_Book.cshtml" for="@book" />
+    };
+</div>
