@@ -1,0 +1,18 @@
+﻿@model MenuViewModel
+
+<h1>Menu</h1>
+
+
+
+<div class="menu">
+    <div>
+        @foreach (var pizza in Model.Pizzas)
+        {
+            @*<h3>@pizza.Name</h3>
+            <p>Price: @pizza.Price</p>
+            <p>Size: @pizza.Size</p>*@
+            <partial name="~/Views/Shared/_pizza.cshtml" for="@pizza" />
+            
+        }
+    </div>
+</div>

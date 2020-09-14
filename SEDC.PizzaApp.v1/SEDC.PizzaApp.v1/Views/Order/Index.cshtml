@@ -1,0 +1,30 @@
+﻿@model Order
+
+<h1>@ViewData["Title"]</h1>
+<h2>Hello, @ViewData["Username"]</h2>
+<h2>@ViewBag.Greeting</h2>
+
+<h3>@ViewBag.Pizza.Name</h3>
+<h3>@ViewBag.Pizza.Price</h3>
+<h3>@ViewBag.Pizza.Size.ToString()</h3>
+<ul>
+    <li>
+        User: @Model.User.FirstName @Model.User.LastName
+    </li>
+    <li>
+        Pizza: @Model.Pizzas[0].Name, Size: @Model.Pizzas[0].Size
+    </li>
+    <li>
+        Price: $@Model.Price
+    </li>
+    <li>
+        Status: @if (Model.IsDelivered)
+        {
+            <p>Order Is Delivered</p> 
+        }
+        else
+        {
+            <p>Your order is in production</p>
+        }
+    </li>
+</ul>

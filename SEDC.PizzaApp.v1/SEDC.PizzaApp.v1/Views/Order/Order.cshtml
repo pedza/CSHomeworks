@@ -1,0 +1,36 @@
+﻿@using SEDC.PizzaApp.v1.Models.Enums
+@model MakeOrderViewModel
+
+
+<h1>Order a Pizza</h1>
+
+<form asp-route="Order" methos="post">
+
+    <h2>Make an order</h2>
+
+    <h3>User Info</h3>
+
+    <label asp-for="FirstName"></label>
+    <input asp-for="FirstName" /><br />
+
+    <label asp-for="LastName"></label>
+    <input asp-for="LastName" /><br />
+
+    <label asp-for="Address"></label>
+    <input asp-for="Address" /><br />
+
+    <label asp-for="Phone"></label>
+    <input asp-for="Phone" /><br />
+
+    <select>
+        @foreach (var item in @Model.PizzaName)
+        {
+            <option value="@item">@item</option>
+        }
+    </select>
+
+    <label asp-for="Size"></label>
+    <select asp-for="Size" asp-items="Html.GetEnumSelectList<PizzaSize>()"></select>
+
+    <button type="submit" class="btn btn-outline-success">Submit</button>
+</form>

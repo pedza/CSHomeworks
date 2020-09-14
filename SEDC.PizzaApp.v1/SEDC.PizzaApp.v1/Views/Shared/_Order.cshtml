@@ -1,0 +1,22 @@
+﻿@model OrderViewModel
+
+    <div class="card">
+        <div class="card-header">
+            Order Number: @Model.Id
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Customer: @Model.FullName </h5>
+            <h5 class="card-title">Price: @Model.Price </h5>
+            <h5 class="card-title">Order: @Model.FullName </h5>
+
+            <div class="menu">
+                <div>
+                    @foreach (var pizza in Model.Pizzas)
+                    {
+                        <partial name="~/Views/Shared/_pizza.cshtml" for="@pizza" />
+                    }
+                </div>
+            </div>
+            <a asp-controller="Order" asp-action="Details" asp-route-id="@Model.Id" class="btn btn-outline-success">Details</a>
+        </div>
+    </div>

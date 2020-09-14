@@ -1,0 +1,29 @@
+﻿@using SEDC.PizzaApp.v1.Models.Enums
+@model MakeEntryViewModel
+
+
+@{
+    ViewBag.Title = "Admin Page";
+
+}
+<h1>Enter new pizza</h1>
+<form asp-route="Entries" method="post">
+
+    
+    <label asp-for="@Model.PizzaName"></label>
+    <input asp-for="@Model.PizzaName" />
+    <br />
+
+    <label asp-for="@Model.Price"></label>
+    <input asp-for="@Model.Price" />
+    <br />
+
+    <label asp-for="@Model.Size"></label>
+    <select asp-for="@Model.Size" asp-items="Html.GetEnumSelectList<PizzaSize>().ToList()">
+    </select>
+    <br />
+
+
+
+    <button type-="submit" class="btn btn-outline-primary">Submit</button>
+</form>

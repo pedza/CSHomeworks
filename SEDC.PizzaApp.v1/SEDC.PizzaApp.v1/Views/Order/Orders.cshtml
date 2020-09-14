@@ -1,0 +1,16 @@
+﻿@model OrdersViewModel
+
+<h1>Orders</h1>
+
+<h4>Fun Facts</h4>
+<h4>First Pizza Delivered: @Model.FirstPizza</h4>
+<h4>First Customer: @Model.FirstPerson</h4>
+<h4>Total orders till now: @Model.NumberOfOrders </h4>
+<br />
+
+<div class="orders">
+     @foreach (var order in Model.Orders)
+     {
+         <partial name="~/Views/Shared/_Order.cshtml" for="@order"/>
+     }
+</div>

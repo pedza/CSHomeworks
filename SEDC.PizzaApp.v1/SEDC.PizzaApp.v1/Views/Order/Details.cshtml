@@ -1,0 +1,47 @@
+﻿@model OrderViewModel
+
+<h1>Order Details</h1>
+<div class="row">
+    <div class="col-md-4">
+        <ul class="list-group orderDetails">
+            <li class="list-group-item">Order Number: @Model.Id</li>
+            <li class="list-group-item">Customer: @Model.FullName</li>
+            <li class="list-group-item">Adress: @Model.Address</li>
+            <li class="list-group-item">Phone: @Model.Contact</li>
+            <li class="list-group-item">Total Price: @Model.Price$</li>
+        </ul>
+     </div>
+</div>
+
+
+<span><b>Order Contains:</b></span>
+<div class="menu">
+    <div>
+        @{
+            foreach (var pizza in Model.Pizzas)
+            {
+
+                @*<li>@pizza.Size.ToString() @pizza.Name = @pizza.Price</li>*@
+                @*@Html.Partial("~/Views/Shared/_pizza.cshtml",pizza);*@
+                <partial name="~/Views/Shared/_pizza.cshtml" for="@pizza" />
+
+            }
+        }
+    </div>
+    
+</div>
+
+<span class="order-status"><b>Order Status:</b></span>
+@if (Model.IsDelivered)
+{
+    <span class="order-status delivered"><b>Order is Delivered</b></span>
+}
+else
+{
+    <span class="order-status not-delivered"><b>Order is coming to you, be patient</b></span>
+}
+
+
+<div>
+    <a asp-controller="order" asp-action="orders" class="btn btn-outline-primary">Back</a>
+</div>
